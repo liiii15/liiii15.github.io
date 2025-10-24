@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>作品简介</title>
+  <link rel="shortcut icon" href="img/底部logo.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.2;
+    }
+
+    @font-face {
+      font-family: 'QIJIC';
+      src: url("./font/QIJIC.ttf");
+    }
+
+    @font-face {
+      font-family: 'Font_1';
+      src: url("./img-mobile/font_1.ttf");
+    }
+
+    body {
+      background-image: url('./img-mobile/bg.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: top center;
+      height: calc(320 / 425 * 100vw * 3.2);
+      font-family: 'Font_1', 'QIJIC', serif, sans-serif;
+      min-width: 320px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: calc(10 / 425 * 100vw) calc(20 / 425 * 100vw);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: calc(40 / 425 * 100vw);
+      height: calc(40 / 425 * 100vw);
+    }
+
+    .logo span {
+      font-size: calc(24 / 425 * 100vw);
+      margin-left: calc(10 / 425 * 100vw);
+      font-weight: bold;
+    }
+
+    .conter {
+      width: 100%;
+      height: calc(500 / 425 * 100vw);
+
+      position: relative;
+      top: calc(8 / 425 * 100vw);
+      left: calc(8 / 425 * 100vw);
+    }
+
+    .banner {
+      position: absolute;
+      top: calc(85 / 425 * 100vw);
+      width: 100%;
+      z-index: -1;
+      height: calc(30 / 425 * 100vw);
+      display: flex;
+      flex-direction: column;
+      padding-left: calc(10 / 425 * 100vw);
+      font-family: 'QIJIC', serif;
+      align-items: center;
+    }
+
+    .banner .title {
+      font-size: calc(75 / 425 * 100vw);
+      font-weight: bold;
+      color: white;
+      margin-top: calc(2 / 425 * 100vw);
+      text-align: center;
+      color: rgba(36, 36, 36, 0.847);
+    }
+
+    .banner .title_2 {
+      font-size: calc(10 / 425 * 100vw);
+      color: rgba(36, 36, 36, 0.847);
+      display: flex;
+    }
+
+    .banner .title_2 .en {
+      font-size: calc(30/ 425 * 100vw);
+      line-height: 0.9;
+      text-align: right;
+    }
+
+    .banner .title_2 .ch {
+      font-size: calc(70 / 425 * 100vw);
+      line-height: 0.8;
+    }
+
+    /* 简介 */
+    .intro {
+      display: flex;
+      position: absolute;
+      top: calc(310 / 425 * 100vw);
+      left: calc(220 / 425 * 100vw);
+      font-family: 'Font_1', serif;
+    }
+
+    .intro .mo {
+      width: calc(18 / 425 * 100vw);
+      height: calc(20 / 425 * 100vw);
+      margin-right: calc(5 / 425 * 100vw);
+      opacity: 0.5;
+    }
+
+    .intro .text {
+      font-size: calc(13 / 425 * 100vw);
+      line-height: 1.2;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      display: block;
+      margin-right: calc(5 / 425 * 100vw);
+    }
+
+    .intro .text.right {
+      margin-left: calc(10 / 425 * 100vw);
+      border-left: calc(1 / 425 * 100vw) solid rgba(41, 41, 41, 0.5);
+      padding-left: calc(15 / 425 * 100vw);
+    }
+
+    /* 正文 */
+    section {
+      width: 90%;
+      position: absolute;
+      top: calc(649 / 425 * 100vw);
+      left: 5%;
+      height: auto;
+      padding: calc(20 / 425 * 100vw) 0;
+    }
+
+    section .t_1,
+    section .t_2,
+    section .t_3,
+    section .t_4,
+    section .t_5 {
+      width: 50%;
+      margin-bottom: calc(30 / 425 * 100vw);
+      position: relative;
+    }
+
+    section .t_1 {
+      height: calc(297 / 425 * 100vw);
+    }
+
+    section .t_2 {
+      width: 100%;
+      margin-top: calc(73 / 425 * 100vw);
+    }
+
+    section .t_3 {
+      margin-bottom: 0px;
+      height: calc(200 / 425 * 100vw);
+      width: 60%;
+    }
+
+    section .t_4 {
+      margin-bottom: 0;
+      width: 100%;
+      margin-top: calc(-25 / 425 * 100vw);
+    }
+
+    section .t_5 {
+      margin-bottom: 0px;
+      height: calc(200 / 425 * 100vw);
+      width: 60%;
+    }
+
+    section .t_1 .caption,
+    section .t_2 .caption,
+    section .t_3 .caption,
+    section .t_4 .caption,
+    section .t_5 .caption {
+      position: relative;
+      width: 100%;
+
+    }
+
+    section .t_2 .caption {
+      margin-left: 50%;
+    }
+
+    section .t_4 .caption {
+      margin-left: 50%;
+      margin-top: calc(-34 / 425 * 100vw);
+    }
+
+    .moji {
+      width: calc(140 / 425 * 100vw);
+      max-width: calc(200 / 425 * 100vw);
+      height: calc(70 / 425 * 100vw);
+      opacity: 0.6;
+    }
+
+    .moji.right_1 {
+      max-width: calc(350 / 425 * 100vw);
+      margin-left: calc(60 / 425 * 100vw);
+    }
+
+    .moji.right_2 {
+      max-width: calc(200 / 425 * 100vw);
+      margin-left: calc(60 / 425 * 100vw);
+    }
+
+    .theme {
+      position: absolute;
+      top: calc(10 / 425 * 100vw);
+      left: calc(30 / 425 * 100vw);
+      font-size: calc(40 / 425 * 100vw);
+      font-weight: bold;
+      color: rgb(196, 196, 196);
+      font-family: 'QIJIC', serif;
+      white-space: nowrap;
+    }
+
+    .theme.right {
+      margin-left: calc(60 / 425 * 100vw);
+    }
+
+    .theme.paibie {
+      top: calc(5 / 425 * 100vw);
+      left: calc(30 / 425 * 100vw);
+    }
+
+    .theme.xuexi {
+      top: calc(5 / 425 * 100vw);
+      left: calc(30 / 425 * 100vw);
+    }
+
+    .theme.minghua {
+      margin-left: calc(60 / 425 * 100vw);
+    }
+
+    section .text_0 {
+      font-size: calc(16 / 425 * 100vw);
+      font-weight: bold;
+      margin-bottom: calc(4 / 425 * 100vw);
+      color: #2c2c2c;
+      border-left: 3px solid #694400;
+      padding-left: 5px;
+    }
+
+    section .text_1,
+    section .text_2 {
+      font-size: calc(12 / 425 * 100vw);
+      line-height: 1.8;
+      margin-bottom: calc(5 / 425 * 100vw);
+      width: 100%;
+      letter-spacing: calc(1 / 425 * 100vw);
+      color: #4a4a4a;
+      font-weight: bold
+    }
+
+    section .t_2 .text_1 {
+      font-size: calc(12 / 425 * 100vw);
+      line-height: 1.8;
+      margin-bottom: calc(15 / 425 * 100vw);
+      width: 100%;
+      letter-spacing: calc(1 / 425 * 100vw);
+      color: #4a4a4a;
+    }
+
+    section .right_text,
+    section .left_text {
+      width: 100%;
+      transform: none;
+    }
+
+    section .left_text {
+      width: 60%;
+    }
+
+    .people1 {
+      position: absolute;
+      bottom: calc(50 / 425 * 100vw);
+      left: calc(170 / 425 * 100vw);
+      width: calc(230 / 425 * 100vw);
+      height: auto;
+    }
+
+    .people2 {
+      position: absolute;
+      bottom: calc(40 / 425 * 100vw);
+      left: calc(219 / 425 * 100vw);
+      width: calc(200 / 425 * 100vw);
+      height: auto;
+    }
+
+    .people3 {
+      position: absolute;
+      bottom: calc(-50 / 425 * 100vw);
+      left: calc(219 / 425 * 100vw);
+      width: calc(180 / 425 * 100vw);
+      height: auto;
+    }
+
+    .footer {
+      width: 100%;
+      height: calc(89 / 425 * 100vw);
+      position: absolute;
+      bottom: calc(-193 / 425 * 100vw);
+      left: calc(120 / 425 * 100vw);
+      font-size: calc(13 / 425 * 100vw);
+    }
+
+    .footer button {
+      display: block;
+      margin-left: calc(89 / 425 * 100vw);
+      margin-top: calc(11 / 425 * 100vw);
+      padding: calc(5 / 425 * 100vw) calc(10 / 425 * 100vw);
+      width: calc(80 / 425 * 100vw);
+      height: calc(30 / 425 * 100vw);
+      background-color: rgba(99, 233, 144, 0.413);
+      color: #333;
+      border: none;
+      border-radius: calc(5 / 425 * 100vw);
+      font-size: calc(13 / 425 * 100vw);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: calc(15 / 425 * 100vw);
+      font-size: calc(10 / 425 * 100vw);
+    }
+
+    th,
+    td {
+      border: calc(1 / 425 * 100vw) solid rgba(41, 41, 41, 0.2);
+      padding: calc(8 / 425 * 100vw);
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(227, 173, 102, 0.5);
+      font-weight: bold;
+      color: #444;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(242, 242, 242, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="img-mobile/底部logo.png" alt="logo">
+      <span>墨戏中国</span>
+    </div>
+    <div class="title">
+      <div style="font-size: 1.2rem; font-weight: bold;">作品简介
+      </div>
+    </div>
+  </header>
+  <div class="conter">
+    <div class="banner">
+      <div class="title">墨戏</div>
+      <div class="title_2">
+        <div>
+          <div class="en">chinese</div>
+          <span class="en">brush Painting</span>
+        </div>
+        <div class="ch">中国</div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="intro">
+    <img src="./img-mobile/点.png" alt="" class="mo">
+
+    <div class="text">中国传统水墨画文化网页平台
+    </div>
+    <div class="text right">旨在通过数字科技展示与弘扬
+    </div>
+    <div class="text">中国水墨画艺术的博大精深</div>
+  </div>
+  <section>
+    <div class="t_1" style="width: 60%;">
+      <div class="caption">
+        <img src="./img-mobile/moji.png" alt="" class="moji">
+        <h2 class="theme">首页</h2>
+      </div>
+      <div class="text_0" style="font-size:calc(20 / 425 * 100vw) ;">你真的能看懂水墨画吗？</div>
+      <div class="text_1" style="width: 75%;">渐起——提高人们兴趣，让人们想要了解水墨画，愿意去学会看懂水墨画，并在后续愿意学习水墨画背后的故事</div>
+      <div class="text_2" style="font-size:calc(20 / 425 * 100vw) ;">由笔入画-由朝入卷</div>
+      <img src="./img-mobile/人物1.png" alt="" class="people1 slide-item" data-direction="right">
+    </div>
+    <div class="t_2">
+      <div class="caption">
+        <img src="./img-mobile/moji.png" alt="" class="moji right_1">
+        <h2 class="theme right">历史</h2>
+      </div>
+      <div class="right_text">
+        <div class="text_0" style="margin-top: 10px;">你知道水墨画背后的文化价值吗？</div>
+        <div class="text_1">
+          <table>
+            <thead>
+              <tr>
+                <th>非遗项目名称</th>
+                <th>列入时间</th>
+                <th>核心内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>中国画</td>
+                <td>2008年 (第二批)</td>
+                <td>含山水、花鸟、人物三科，核心技法勾皴点染擦，分写意、工笔风格，强调 "外师造化，中得心源"。</td>
+              </tr>
+              <tr>
+                <td>湖笔制作技艺</td>
+                <td>2006年 (第一批)</td>
+                <td>12道核心工序，讲究 "尖、齐、圆、健"，适配水墨画不同笔触。</td>
+              </tr>
+              <tr>
+                <td>宣纸制作技艺</td>
+                <td>2006年 (第一批)</td>
+                <td>以青檀皮、沙田稻草为原料，经108道工序，纸张 "韧而能润、光而不滑"，是水墨核心载体。</td>
+              </tr>
+              <tr>
+                <td>夹江竹纸制作技艺</td>
+                <td>2006年 (第一批)</td>
+                <td>以慈竹为原料，手工抄纸，韧性强、吸墨好，适配写意水墨，是西南水墨重要配套。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <div class="t_3">
+      <div class="caption">
+        <img src="./img-mobile/moji.png" alt="" class="moji">
+        <h2 class="theme paibie">派别</h2>
+      </div>
+      <div class="right_text">
+        <div class="text_0">墨分五色，但画派却约有20种</div>
+        <div class="text_1">深远——理解水墨文化的 "深度" 而非只看 "表面"，从背后的画派风格，到独属于画家的个性，以浅入深，就像 "从山前窥山后"</div>
+        <div class="text_2">感受吴门画派的江南情谊、西部画派的黄土史诗、岭南画派的丹青革新...</div>
+      </div>
+      <img src="./img-mobile/人物2.png" alt="" class="people2 slide-item" data-direction="right">
+
+    </div>
+    <div class="t_4">
+      <div class="caption">
+        <img src="./img-mobile/moji.png" alt="" class="moji right_2">
+        <h2 class="theme minghua">名画</h2>
+      </div>
+      <div class="left_text">
+        <div class="text_0">如何去欣赏名画？</div>
+        <div class="text_1">水墨名画是可触摸的文化密码。临摹千年笔墨，传承“天人合一”的哲思、“托物言志”的风骨，与中华文明深度对话。</div>
+        <div class="text_2">苏轼评王维“诗中有画，画中有诗”，道出水墨画的精髓——它不止是视觉艺术，更是诗意与哲思的载体。</div>
+      </div>
+    </div>
+    <div class="t_5">
+      <div class="caption">
+        <img src="./img-mobile/moji.png" alt="" class="moji">
+        <h2 class="theme xuexi">学习</h2>
+      </div>
+      <div class="right_text">
+        <div class="text_0">执墨入画：在千年文脉中重拾东方美学</div>
+        <div class="text_1">水墨是承载中华文明的容器。了解传世名作，不仅是学画技，更是与古人对话，让千年文化基因在笔墨间重焕生机。</div>
+      </div>
+      <img src="./img-mobile/人物3.png" alt=" " class="people3 slide-item" data-direction="right">
+
+    </div>
+
+    <footer>
+      <div class="footer">
+        了解网站更多内容，请前往pc端体验
+
+        <button>立即预约</button>
+      </div>
+    </footer>
+  </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 页面加载时的初始动画
+  gsap.from('header', {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out"
+  });
+
+  gsap.from('.banner .title', {
+    y: -30,
+    opacity: 0,
+    duration: 1.2,
+    delay: 0.3,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from('.banner .title_2', {
+    y: 30,
+    opacity: 0,
+    duration: 1.2,
+    delay: 0.5,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from('.intro', {
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    delay: 0.8,
+    ease: "power2.out"
+  });
+
+  // 为所有主题标题添加动画
+  document.querySelectorAll('.theme').forEach(theme => {
+    gsap.fromTo(
+      theme,
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: theme,
+          start: 'top 85%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  });
+
+  // 为文本内容添加动画
+  document.querySelectorAll('.text_0').forEach(text => {
+    gsap.fromTo(
+      text,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: text,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  });
+
+  document.querySelectorAll('.text_1, .text_2').forEach(text => {
+    gsap.fromTo(
+      text,
+      { y: 20, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: text,
+          start: 'top 85%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  });
+
+  // 为墨迹图片添加动画
+  document.querySelectorAll('.moji').forEach(moji => {
+    gsap.fromTo(
+      moji,
+      { scale: 0.5, rotation: -10, opacity: 0 },
+      {
+        scale: 1,
+        rotation: 0,
+        opacity: 0.6,
+        duration: 1,
+        ease: "elastic.out(1, 0.5)",
+        scrollTrigger: {
+          trigger: moji,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  });
+
+  // 为表格添加动画
+  gsap.fromTo(
+    'table',
+    { y: 50, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: 'table',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play reverse play reverse'
+      }
+    }
+  );
+
+  // 为表格行添加交错动画
+  gsap.utils.toArray('tbody tr').forEach((tr, i) => {
+    gsap.fromTo(
+      tr,
+      { x: -30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: tr,
+          start: 'top 90%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse'
+        }
+      }
+    );
+  });
+
+  // 为按钮添加悬停动画
+  document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      gsap.to(button, {
+        scale: 1.05,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    button.addEventListener('mouseleave', () => {
+      gsap.to(button, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    // 点击动画
+    button.addEventListener('click', () => {
+      gsap.to(button, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1
+      });
+    });
+  });
+
+  // 原有的人物滑动动画
+  document.querySelectorAll('.slide-item').forEach(item => {
+    const direction = item.dataset.direction;
+    gsap.fromTo(
+      item,
+      { x: direction === 'left' ? '-150%' : '150%', opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play reverse play reverse',
+          markers: false
+        }
+      }
+    );
+  });
+
+
+</script>
+
+</html>
